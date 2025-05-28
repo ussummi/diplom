@@ -1,30 +1,30 @@
 import dayjs from 'dayjs';
 import { getSession } from 'next-auth/react';
 
-let currentToken: string | null = null;
-
 export async function iToken(): Promise<string | null> {
   try {
     const session: any = await getSession();
 
     if (!session) {
-      throw new Error('Session not found.');
+      console.warn('Session not found.');
+      return null;
     }
 
-    const token = session.token
-    const expireDate = dayjs(session.expires);
-    const currentDate = dayjs();
+    const token = session.token;  // Make sure you have token in session callback!
+    const expiresAt = dayjs(session.expires);
+    const now = dayjs();
 
-    if (expireDate.isBefore(currentDate)) {
-      // Token has expired, set token to null
-      currentToken = null;
-    } else {
-      // Token is still valid, update currentToken
-      currentToken = token;
-      // // console.log(' currentToken', currentToken);
+    if (!token) {
+      console.warn('Token not found in session.');
+      return null;
     }
 
-    return currentToken;
+    if (expiresAt.isBefore(now)) {
+      console.warn('Session token expired.');
+      return null;
+    }
+
+    return token;
   } catch (error) {
     console.error('Error retrieving session:', error);
     return null;

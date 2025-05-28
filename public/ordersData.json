@@ -1,0 +1,62 @@
+[
+  {
+    "store_name": "Мах Импекс",
+    "store_id": "1",
+    "address": "Хөвсгөл, 25-р гудамж",
+    "location": "Улаанбаатар, Монгол",
+    "phone": "99118899",
+    "order_date": "2025-05-07",
+    "amount": 15000,
+    "status": "Батлагдсан",
+    "order_list": [
+      {
+        "item_image": "/images/item1.jpg",
+        "item_name": "Мах",
+        "item_quantity": 2,
+        "item_price": 5000
+      },
+      {
+        "item_image": "/images/item2.jpg",
+        "item_name": "Тамхи",
+        "item_quantity": 1,
+        "item_price": 10000
+      }
+    ]
+  },
+  {
+    "store_name": "Тамхи Импекс",
+    "store_id": "2",
+    "address": "Сүхбаатар, 12-р гудамж",
+    "location": "Улаанбаатар, Монгол",
+    "phone": "99118888",
+    "order_date": "2025-05-10",
+    "amount": 5000,
+    "status": "Цуцлагдсан",
+    "order_list": [
+      {
+        "item_image": "/images/item3.jpg",
+        "item_name": "Тамхи 100",
+        "item_quantity": 3,
+        "item_price": 1500
+      }
+    ]
+  },
+  {
+    "store_name": "Шимт Загас",
+    "store_id": "3",
+    "address": "Баянзүрх, 17-р гудамж",
+    "location": "Улаанбаатар, Монгол",
+    "phone": "99001122",
+    "order_date": "2025-05-12",
+    "amount": 20000,
+    "status": "Батлагдсан",
+    "order_list": [
+      {
+        "item_image": "/images/item4.jpg",
+        "item_name": "Загас",
+        "item_quantity": 5,
+        "item_price": 4000
+      }
+    ]
+  }
+]

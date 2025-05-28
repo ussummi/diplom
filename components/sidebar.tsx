@@ -12,8 +12,8 @@ export default function Sidebar() {
   
         {/* Nav Links */}
         <nav className="flex flex-col space-y-4">
-          <a href="#" className="hover:bg-blue-700 px-4 py-2 rounded">Аж ахуйн нэгжүүд</a>
-          <a href="#" className="hover:bg-blue-700 px-4 py-2 rounded">Миний захиалга</a>
+          <a href="/stores" className="hover:bg-blue-700 px-4 py-2 rounded">Аж ахуйн нэгжүүд</a>
+          <a href="/orders" className="hover:bg-blue-700 px-4 py-2 rounded">Миний захиалга</a>
           <a href="#" className="hover:bg-blue-700 px-4 py-2 rounded">Гомдол</a>
         </nav>
       </div>

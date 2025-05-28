@@ -1,0 +1,99 @@
+[
+  {
+    "ID": 1,
+    "name": "Талх чихэр",
+    "phone": "99001122",
+    "email": "talh@example.com",
+    "address": "Улаанбаатар, Сүхбаатар дүүрэг",
+    "register": "A1234567",
+    "description": "Монголын ууган хүнсний үйлдвэр.",
+    "rating": 4.5,
+    "promotions": ["Бүх талх 10% хямдралтай.", "Сар бүр шинэ бүтээгдэхүүн."],
+    "products": [
+      { "id": 1, "name": "Талх", "ingredients": "Гурил, Ус, Давс", "price": "1000₮" },
+      { "id": 2, "name": "Жигнэмэг", "ingredients": "Гурил, Элсэн чихэр", "price": "1500₮" },
+      { "id": 3, "name": "Бялуу", "ingredients": "Гурил, Өндөг", "price": "2500₮" },
+      { "id": 4, "name": "Зайрмаг", "ingredients": "Сүү", "price": "200₮" }
+    ]
+  },
+  {
+    "ID": 2,
+    "name": "Дархан хүнсний дэлгүүр",
+    "phone": "99003344",
+    "email": "darkhan@example.com",
+    "address": "Дархан-Уул аймаг, Дархан сум",
+    "register": "B2345678",
+    "description": "Дархан хотын хүнсний дэлгүүр.",
+    "rating": 4.0,
+    "promotions": ["Бүтээгдэхүүн тутамд оноо.", "Шинэ ирсэн бараа."],
+    "products": [
+      { "id": 4, "name": "Торт", "ingredients": "Гурил, Сүү", "price": "2000₮" },
+      { "id": 5, "name": "Сүү", "ingredients": "Шинэ сүү", "price": "1200₮" },
+      { "id": 6, "name": "Хиам", "ingredients": "Мах, Давс", "price": "3500₮" }
+    ]
+  },
+  {
+    "ID": 3,
+    "name": "Эрдэнэт хүнсний дэлгүүр",
+    "phone": "99005566",
+    "email": "erdenet@example.com",
+    "address": "Орхон аймаг, Эрдэнэт хот",
+    "register": "C3456789",
+    "description": "Эрдэнэт хотын хүнсний дэлгүүр.",
+    "rating": 3.5,
+    "promotions": ["Хямдралтай бүтээгдэхүүн.", "Өглөөний урамшуулал."],
+    "products": [
+      { "id": 7, "name": "Мах", "ingredients": "Гахайн мах", "price": "4500₮" },
+      { "id": 8, "name": "Ногоо", "ingredients": "Төрөл бүрийн хүнсний ногоо", "price": "2500₮" },
+      { "id": 9, "name": "Тараг", "ingredients": "Сүү, Исгэгч", "price": "1500₮" }
+    ]
+  },
+  {
+    "ID": 4,
+    "name": "Хөвсгөл хүнсний дэлгүүр",
+    "phone": "99007788",
+    "email": "khuvsgul@example.com",
+    "address": "Хөвсгөл аймаг, Мөрөн сум",
+    "register": "D4567890",
+    "description": "Хөвсгөл аймгийн хүнсний дэлгүүр.",
+    "rating": 4.8,
+    "promotions": ["Баярын урамшуулал.", "Хямдрал 20%."],
+    "products": [
+      { "id": 10, "name": "Бяслаг", "ingredients": "Сүү, Давс", "price": "3500₮" },
+      { "id": 11, "name": "Тос", "ingredients": "Өөх тос", "price": "2000₮" },
+      { "id": 12, "name": "Цөцгий", "ingredients": "Сүү", "price": "1800₮" }
+    ]
+  },
+  {
+    "ID": 5,
+    "name": "Архангай хүнсний дэлгүүр",
+    "phone": "99009900",
+    "email": "arkhangai@example.com",
+    "address": "Архангай аймаг, Цэцэрлэг сум",
+    "register": "E5678901",
+    "description": "Архангай аймгийн хүнсний дэлгүүр.",
+    "rating": 4.2,
+    "promotions": ["Бонус оноо цуглуулах.", "Тусгай урамшуулал."],
+    "products": [
+      { "id": 13, "name": "Хиам", "ingredients": "Мах, Давс, Амтлагч", "price": "5000₮" },
+      { "id": 14, "name": "Талх", "ingredients": "Гурил, Ус, Давс", "price": "1000₮" },
+      { "id": 15, "name": "Цай", "ingredients": "Цайны навч", "price": "800₮" }
+    ]
+  },
+  {
+    "ID": 6,
+    "name": "Баянхонгор хүнсний дэлгүүр",
+    "phone": "99001133",
+    "email": "bayankhongor@example.com",
+    "address": "Баянхонгор аймаг, Баянхонгор сум",
+    "register": "F6789012",
+    "description": "Баянхонгор аймгийн хүнсний дэлгүүр.",
+    "rating": 3.9,
+    "promotions": ["Бараа худалдан авбал купон.", "Бүтээгдэхүүн тутамд оноо."],
+    "products": [
+      { "id": 16, "name": "Талх", "ingredients": "Гурил, Ус, Давс", "price": "1000₮" },
+      { "id": 17, "name": "Тос", "ingredients": "Өөх тос", "price": "2000₮" },
+      { "id": 18, "name": "Чихэр", "ingredients": "Сахар", "price": "1500₮" }
+    ]
+  }
+]

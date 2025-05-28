@@ -1,0 +1,174 @@
+[
+  {
+    "id": 1,
+    "register": "MNG123456",
+    "name": "Талх Чихэр",
+    "phone": "99112233",
+    "rating": 4,
+    "address": "Улаанбаатар, Баянзүрх",
+    "order_information": [
+      {
+        "order_id": "O-1234",
+        "status": "Хүргэлт хийгдэж байна",
+        "order_date": "2025-05-01"
+      }
+    ],
+    "receivable_information": [
+      {
+        "status": "Төлбөр төлөгдсөн",
+        "amount": 500000,
+        "payed_date": "2025-05-10"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "register": "MNG654321",
+    "name": "Хөдөө Аж Ахуй",
+    "phone": "99114455",
+    "rating": 5,
+    "address": "Дархан-Уул",
+    "order_information": [
+      {
+        "order_id": "O-2234",
+        "status": "Захиалга баталгаажсан",
+        "order_date": "2025-05-03"
+      }
+    ],
+    "receivable_information": [
+      {
+        "status": "Төлбөр төлөгдсөн",
+        "amount": 750000,
+        "payed_date": "2025-05-15"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "register": "MNG111222",
+    "name": "Сүү ХК",
+    "phone": "99116677",
+    "rating": 3,
+    "address": "Орхон",
+    "order_information": [
+      {
+        "order_id": "O-3234",
+        "status": "Шинээр захиалга хийгдсэн",
+        "order_date": "2025-05-05"
+      }
+    ],
+    "receivable_information": [
+      {
+        "status": "Төлбөр хүлээгдэж байна",
+        "amount": 300000
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "register": "MNG333444",
+    "name": "Мах Импекс",
+    "phone": "99118899",
+    "rating": 2,
+    "address": "Хөвсгөл",
+    "order_information": [
+      {
+        "order_id": "O-4234",
+        "status": "Хүргэлт хүлээгдэж байна",
+        "order_date": "2025-05-07"
+      }
+    ],
+    "receivable_information": [
+      {
+        "status": "Төлбөр төлөгдөөгүй",
+        "amount": 600000
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "register": "MNG555666",
+    "name": "Алтан Тариа",
+    "phone": "99110011",
+    "rating": 5,
+    "address": "Сэлэнгэ",
+    "order_information": [
+      {
+        "order_id": "O-5234",
+        "status": "Захиалга баталгаажсан",
+        "order_date": "2025-05-09"
+      }
+    ],
+    "receivable_information": [
+      {
+        "status": "Төлбөр төлөгдсөн",
+        "amount": 850000,
+        "payed_date": "2025-05-11"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "register": "MNG777888",
+    "name": "Гурил Тээвэр",
+    "phone": "99112244",
+    "rating": 4,
+    "address": "Булган",
+    "order_information": [
+      {
+        "order_id": "O-6234",
+        "status": "Хүргэлт хийгдэж байна",
+        "order_date": "2025-05-12"
+      }
+    ],
+    "receivable_information": [
+      {
+        "status": "Төлбөр хүлээгдэж байна",
+        "amount": 450000
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "register": "MNG999000",
+    "name": "Цагаан Сүү",
+    "phone": "99115566",
+    "rating": 3,
+    "address": "Архангай",
+    "order_information": [
+      {
+        "order_id": "O-7234",
+        "status": "Захиалга шинэчлэгдэж байна",
+        "order_date": "2025-05-14"
+      }
+    ],
+    "receivable_information": [
+      {
+        "status": "Төлбөр төлөгдөөгүй",
+        "amount": 250000
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "register": "MNG222333",
+    "name": "Жимс Жимсгэнэ",
+    "phone": "99117788",
+    "rating": 4,
+    "address": "Хэнтий",
+    "order_information": [
+      {
+        "order_id": "O-8234",
+        "status": "Хүргэлт баталгаажсан",
+        "order_date": "2025-05-16"
+      }
+    ],
+    "receivable_information": [
+      {
+        "status": "Төлбөр төлөгдсөн",
+        "amount": 900000,
+        "payed_date": "2025-05-17"
+      }
+    ]
+  }
+]

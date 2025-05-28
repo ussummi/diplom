@@ -1,0 +1,27 @@
+[
+  {
+    "address": "Ulaanbaatar, Chingeltei, 14th Khoroo",
+    "store_name": "Талх чихэр",
+    "store_id": "1",
+    "item_name": "Жигнэмэг",
+    "item_id": "2",
+    "remarks": "Item quality was poor, needs improvement.",
+    "imageList": [
+      "/images/complaints/complaint1.jpg",
+      "/images/complaints/complaint2.jpg"
+    ],
+    "created_date": "2025-05-25T10:00:00"
+  },
+  {
+    "address": "Ulaanbaatar, Bayangol, 12th Khoroo",
+    "store_name": "Гранд сити",
+    "store_id": "2",
+    "item_name": "Бялуу",
+    "item_id": "3",
+    "remarks": "Packaging was damaged.",
+    "imageList": [
+      "/images/complaints/complaint3.jpg"
+    ],
+    "created_date": "2025-05-26T11:30:00"
+  }
+]
