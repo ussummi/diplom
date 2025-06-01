@@ -13,7 +13,11 @@
       { "id": 1, "name": "Талх", "ingredients": "Гурил, Ус, Давс", "price": "1000₮" },
       { "id": 2, "name": "Жигнэмэг", "ingredients": "Гурил, Элсэн чихэр", "price": "1500₮" },
       { "id": 3, "name": "Бялуу", "ingredients": "Гурил, Өндөг", "price": "2500₮" },
-      { "id": 4, "name": "Зайрмаг", "ingredients": "Сүү", "price": "200₮" }
+      { "id": 4, "name": "Зайрмаг", "ingredients": "Сүү", "price": "200₮" },
+      { "id": 5, "name": "Гурилан боов", "ingredients": "Гурил, Ус, Давс", "price": "1500₮" },
+      { "id": 6, "name": "Сүү", "ingredients": "Шинэ сүү", "price": "1000₮" },
+      { "id": 7, "name": "Бяслаг", "ingredients": "Сүү", "price": "3000₮" },
+      { "id": 8, "name": "Хиам", "ingredients": "Мах, Давс", "price": "2000₮" }
     ]
   },
   {

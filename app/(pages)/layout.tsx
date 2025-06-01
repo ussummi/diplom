@@ -1,23 +1,40 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useSearch } from "@/app/context/SearchContext";
 import LogoImage from "../../public/img/icon.png";
 import ProfileImage from "../../public/img/profile logo.png";
+
+type User = {
+  name: string;
+  email: string;
+  role: "merchant" | "store";
+};
 
 export default function PagesLayout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [showLogoutDialog, setShowLogoutDialog] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const { searchTerm, setSearchTerm } = useSearch();
+  const router = useRouter();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("loggedUser");
+    if (storedUser) setUser(JSON.parse(storedUser));
+  }, []);
+
+  if (!user) return <div>Loading...</div>;
 
   const handleMenuToggle = () => setMenuOpen((prev) => !prev);
   const handleProfileToggle = () => setProfileOpen((prev) => !prev);
 
-  // end hereglegchee taniad role oor n layout iih n menunuud uur haragdana
-  const user = {
-    name: "Хүнсний дэлгүүр",
-    email: "delguur@gmail.com",
-    role: "store", // or "store"
+  const confirmLogout = () => {
+    localStorage.removeItem("loggedUser");
+    router.push("/login");
   };
 
   return (
@@ -32,27 +49,15 @@ export default function PagesLayout({ children }: { children: ReactNode }) {
           <nav className="flex flex-col space-y-4 text-center w-full">
             {user.role === "merchant" ? (
               <>
-                <Link href="/merchant" className="hover:bg-blue-700 py-2">
-                  Аж ахуйн нэгжүүд
-                </Link>
-                <Link href="/merchant/orders" className="hover:bg-blue-700 py-2">
-                  Ирсэн захиалга
-                </Link>
-                <Link href="/merchant/complaints" className="hover:bg-blue-700 py-2">
-                  Бүтгэгдсэн гомдол
-                </Link>
+                <Link href="/merchant" className="hover:bg-blue-700 py-2">Аж ахуйн нэгжүүд</Link>
+                <Link href="/merchant/orders" className="hover:bg-blue-700 py-2">Ирсэн захиалга</Link>
+                <Link href="/merchant/complaints" className="hover:bg-blue-700 py-2">Бүтгэгдсэн гомдол</Link>
               </>
             ) : (
               <>
-                <Link href="/stores" className="hover:bg-blue-700 py-2">
-                  Аж ахуйн нэгжүүд
-                </Link>
-                <Link href="/orders" className="hover:bg-blue-700 py-2">
-                  Миний захиалга
-                </Link>
-                <Link href="/complaints" className="hover:bg-blue-700 py-2">
-                  Гомдол
-                </Link>
+                <Link href="/stores" className="hover:bg-blue-700 py-2">Аж ахуйн нэгжүүд</Link>
+                <Link href="/orders" className="hover:bg-blue-700 py-2">Миний захиалга</Link>
+                <Link href="/complaints" className="hover:bg-blue-700 py-2">Гомдол</Link>
               </>
             )}
           </nav>
@@ -60,24 +65,28 @@ export default function PagesLayout({ children }: { children: ReactNode }) {
         <div className="text-xs text-center p-4">Help and Support</div>
       </aside>
 
-      <main className="flex-1 p-6 h-full overflow-auto">
+      <main className="flex-1 p-6 h-full overflow-auto relative">
         <button
-          className="lg:hidden text-black text-3xl absolute left-6 top-6 z-20"
+          className={`lg:hidden absolute left-6 top-6 z-20 transition-colors duration-200 ${
+            menuOpen ? "text-white text-sm" : "text-black text-3xl"
+          }`}
           onClick={handleMenuToggle}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          ☰
+          {menuOpen ? "✕" : "☰"}
         </button>
 
         <div className="flex justify-between items-center mb-6">
-          <div className="relative w-80 hidden sm:block">
+          <div className="flex-1" />
+          <div className="relative w-80 mx-auto ml-10 mr-0 sm:mr-10">
             <input
               type="text"
               placeholder="Хайх . . ."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full rounded-full px-4 py-2 border pl-10"
             />
-            <button className="absolute right-2 top-1/2 -translate-y-1/2 text-blue-600">
-              🔍
-            </button>
+            <button className="absolute right-2 top-1/2 -translate-y-1/2 text-blue-600">🔍</button>
           </div>
 
           <div className="relative flex items-center space-x-2 ml-auto cursor-pointer">
@@ -89,10 +98,7 @@ export default function PagesLayout({ children }: { children: ReactNode }) {
               className="rounded-full"
               onClick={handleProfileToggle}
             />
-            <span
-              className="text-sm font-medium hidden sm:inline"
-              onClick={handleProfileToggle}
-            >
+            <span className="text-sm font-medium hidden sm:inline" onClick={handleProfileToggle}>
               Миний профайл
             </span>
 
@@ -103,7 +109,7 @@ export default function PagesLayout({ children }: { children: ReactNode }) {
                 <hr />
                 <button
                   className="w-full text-left px-4 py-2 hover:bg-gray-100"
-                  onClick={() => alert("Гарах үйлдэл")}
+                  onClick={() => setShowLogoutDialog(true)}
                 >
                   Гарах
                 </button>
@@ -113,6 +119,28 @@ export default function PagesLayout({ children }: { children: ReactNode }) {
         </div>
 
         {children}
+
+        {showLogoutDialog && (
+          <div className="fixed inset-0 backdrop-blur-sm bg-opacity-30 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm">
+              <h2 className="text-lg font-semibold mb-4">Та гарахдаа итгэлтэй байна уу?</h2>
+              <div className="flex justify-end space-x-3">
+                <button
+                  onClick={() => setShowLogoutDialog(false)}
+                  className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+                >
+                  Буцах
+                </button>
+                <button
+                  onClick={confirmLogout}
+                  className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                >
+                  Гарах
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );

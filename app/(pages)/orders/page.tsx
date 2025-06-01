@@ -31,7 +31,7 @@ export default function OrdersPage() {
 
     const savedTemplates = JSON.parse(localStorage.getItem("templates") || "[]");
     setTemplates(savedTemplates);
-  }, [activeTab]); // Refresh on tab switch if needed
+  }, [activeTab]);
 
   const categorizeOrders = (timestamp: number) => {
     const orderDate = new Date(timestamp);
@@ -98,12 +98,12 @@ export default function OrdersPage() {
                   {ordersInCategory.map((order) => (
                     <div
                       key={order.id}
-                      className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col items-center text-center border"
+                      className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex justify-between flex-col items-center text-center border"
                     >
                       <Image src={StoreLogo} alt="Store Logo" width={80} height={80} className="rounded mb-4" />
                       <h3 className="text-lg font-semibold mb-1">{order.storeName}</h3>
                       <p className="text-sm text-gray-600 mb-1">📞 {order.storePhone}</p>
-                      <ul className="text-sm mb-2 max-h-48 overflow-y-auto">
+                      <ul className="text-sm mb-2 max-h-[3.75rem] overflow-y-auto">
                         {order.items.map((item) => (
                           <li key={item.id}>
                             {item.name} x {item.quantity} ({item.price})
@@ -134,12 +134,12 @@ export default function OrdersPage() {
               {templates.map((template) => (
                 <div
                   key={template.id}
-                  className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col items-center text-center border"
+                  className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex justify-between flex-col items-center text-center border"
                 >
                   <Image src={StoreLogo} alt="Store Logo" width={80} height={80} className="rounded mb-4" />
                   <h3 className="text-lg font-semibold mb-1">{template.storeName}</h3>
                   <p className="text-sm text-gray-600 mb-1">📞 {template.storePhone}</p>
-                  <ul className="text-sm mb-2 max-h-48 overflow-y-auto">
+                  <ul className="text-sm mb-2 max-h-[3.75rem] overflow-y-auto">
                     {template.items.map((item) => (
                       <li key={item.id}>
                         {item.name} x {item.quantity} ({item.price})
@@ -162,7 +162,7 @@ export default function OrdersPage() {
                         router.push("/orders");
                       }, 1500);
                     }}
-                    className="mt-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 w-full sm:w-auto"
+                    className="mt-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 w-full sm:w-auto cursor-pointer"
                   >
                     Дахин захиалах
                   </button>
@@ -182,12 +182,12 @@ export default function OrdersPage() {
               {templates.map((template) => (
                 <div
                   key={template.id}
-                  className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col items-center text-center border"
+                  className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex  justify-between flex-col items-center text-center border"
                 >
                   <Image src={StoreLogo} alt="Store Logo" width={80} height={80} className="rounded mb-4" />
                   <h3 className="text-lg font-semibold mb-1">{template.storeName}</h3>
                   <p className="text-sm text-gray-600 mb-1">📞 {template.storePhone}</p>
-                  <ul className="text-sm mb-2 max-h-48 overflow-y-auto">
+                  <ul className="text-sm mb-2 max-h-[3.75rem] overflow-y-auto">
                     {template.items.map((item) => (
                       <li key={item.id}>
                         {item.name} x {item.quantity} ({item.price})
